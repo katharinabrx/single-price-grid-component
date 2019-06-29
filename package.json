@@ -1,0 +1,45 @@
+{
+  "name": "single-price-grid-component",
+  "version": "1.0.0",
+  "description": "Frontend Mentor project",
+  "main": "src/views/index.html",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katharinabrx/single-price-grid-component.git"
+  },
+  "keywords": [
+    "html",
+    "css"
+  ],
+  "author": "katharina.dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katharinabrx/single-price-grid-component/issues"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE 10"
+  ],
+  "homepage": "https://github.com/katharinabrx/single-price-grid-component#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-flatten": "^0.4.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}
