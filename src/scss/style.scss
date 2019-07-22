@@ -1,0 +1,190 @@
+// Typography
+// karla-regular - latin 
+@font-face {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../fonts/karla-v7-latin/karla-v7-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Karla'), local('Karla-Regular'),
+         url('../../fonts/karla-v7-latin/karla-v7-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../../fonts/karla-v7-latin/karla-v7-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../../fonts/karla-v7-latin/karla-v7-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../../fonts/karla-v7-latin/karla-v7-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../../fonts/karla-v7-latin/karla-v7-latin-regular.svg#Karla') format('svg'); /* Legacy iOS */
+  }
+  /* karla-700 - latin */
+  @font-face {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../../fonts/karla-v7-latin/karla-v7-latin-700.eot'); /* IE9 Compat Modes */
+    src: local('Karla Bold'), local('Karla-Bold'),
+         url('../../fonts/karla-v7-latin/karla-v7-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../../fonts/karla-v7-latin/karla-v7-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../../fonts/karla-v7-latin/karla-v7-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('../../fonts/karla-v7-latin/karla-v7-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../../fonts/karla-v7-latin/karla-v7-latin-700.svg#Karla') format('svg'); /* Legacy iOS */
+  }
+
+//
+// Root Variables
+// ------------------
+:root {
+    --color-primary: hsl(179, 62%, 43%);
+    --color-primary-lighter: hsla(179, 62%, 43%,0.8);
+    --color-secondary: hsl(71, 73%, 54%);
+    --color-secondary--darker: hsl(71, 65%, 51%);
+    --color-lightest: #fff;
+    --color-lighter: hsla(204, 43%, 93%,0.8);
+    --color-light: hsl(204, 43%, 93%);
+    --color-dark:hsl(218, 22%, 67%);
+    --color-darker: #000;
+    --font: 'Karla', sans-serif;
+    --font-size-h1:1.3em;
+    --font-size-h2:1.125em;
+    --font-size-base:1em;
+    --font-size-small:0.75em;
+    --line-height: 1.5;
+    --border-radius: 0.5em;
+    --section-padding: 1.5em;
+    --min-width:20em;
+    --max-width: 40em;
+}
+
+//
+// Basic Layout
+// ------------------
+
+body {
+    margin:0;
+    padding:0;
+    background-color: var(--color-light);
+    font-family: var(--font);
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+//
+// Headings, paragraphs
+// ------------------
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+h1 {
+    color: var(--color-primary);
+    font-size:var(--font-size-h1);
+    line-height: var(--line-height);
+    margin-top:0;
+}
+h2 {
+    color: var(--color-secondary);
+    font-size:var(--font-size-h2);
+    margin-top:0;
+} 
+p {
+    color: var(--color-dark);
+    font-size:var(--font-size-base);
+}
+
+//
+// Price grid
+// --------------
+.pricegrid {
+    min-width:20em;
+    margin-top: auto;
+    margin-bottom: auto;
+    //min-width:var(--min-width);
+    max-width: var(--max-width);
+    display:grid;
+    grid-template-columns: 1fr ;
+    grid-template-areas: "header" "subscribe" "whyus";
+    border-radius: var(--border-radius);
+    overflow: hidden; 
+    background-color:var(--color-lightest);
+}
+
+.pricegrid section {
+    padding: var(--section-padding);    
+}
+.pricegrid__header {
+    grid-area: header;
+    line-height: var(--line-height);
+} 
+.pricegrid__subscribe {
+    grid-area: subscribe;
+    background-color: var(--color-primary);
+    h2, p  {
+        color:var(--color-lightest);
+    }
+}
+.pricegrid__why-us {
+    grid-area: whyus;
+    background-color:var(--color-primary-lighter);
+    h2, p {
+        color:var(--color-lightest);
+    }
+    ul {
+        color:var(--color-lighter);
+        list-style-type:none;
+        padding-left:0;
+    }
+}
+.pricegrid__month {
+    color: var(--color-lighter);
+}
+.pricegrid__price {
+    font-size: calc(var(--font-size-base) * 2);
+    font-weight: 700;
+}
+// Pricegrid responsive
+@media screen and (min-width: 50em) {
+    .pricegrid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "header header" "subscribe whyus";
+    }
+    html{
+        font-size: 110%;
+    } 
+}
+@media screen and (min-width: 110em) {
+    
+    html{
+        font-size: 130%;
+    } 
+}
+
+
+// Links
+
+a {
+    color: var(--color-primary);
+    &:hover {
+        color: var(--color-secondary);
+    }
+}
+
+.btn {
+    background-color: var(--color-secondary);
+    color: var(--color-lightest);
+    border-radius: var(--border-radius);
+    display: block;
+    text-align: center;
+    padding: 1em;
+    text-decoration: none;
+    font-weight:bold;
+    box-shadow: 0px 5px 20px -5px rgba(0,0,0,0.3);
+    &:hover {
+        background-color: var(--color-secondary--darker);
+        color: var(--color-lighter);
+    }
+}
+
+
+
+
+
